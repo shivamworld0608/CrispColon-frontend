@@ -25,7 +25,9 @@ function Profile() {
         }
 
         const response = await axios.get(`${import.meta.env.REACT_APP_BASE_URL}/profile/get`, {
+          headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
+
         });
 
         setUser(response.data.user);
