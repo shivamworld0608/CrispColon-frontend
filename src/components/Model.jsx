@@ -1,5 +1,3 @@
-import video1 from "../assets/video1.mp4";
-import video2 from "../assets/video2.mp4";
 import { useState } from "react";
 
 const Model = () => {
@@ -25,7 +23,7 @@ const Model = () => {
     setIsUploading(true); // Show loading indicator
 
     try {
-      const response = await fetch("http://localhost:5000/api/upload", {
+      const response = await fetch(`${import.meta.env.REACT_APP_BASE_URL}/upload`, {
         method: "POST",
         body: formData,
         credentials:"include",

@@ -24,7 +24,7 @@ function Profile() {
           return;
         }
 
-        const response = await axios.get("http://localhost:5000/profile/get", {
+        const response = await axios.get(`${import.meta.env.REACT_APP_BASE_URL}/profile/get`, {
           withCredentials: true,
         });
 
@@ -74,7 +74,7 @@ function Profile() {
       form.append('file', sendImage);
       const token = Cookies.get('token');
 
-     const response = await axios.put("http://localhost:5000/profile/update-picture", form, {
+     const response = await axios.put(`${import.meta.env.REACT_APP_BASE_URL}/profile/update-picture`, form, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
@@ -92,7 +92,7 @@ function Profile() {
     e.preventDefault();
     try {
       const token = Cookies.get('token');
-      await axios.put("http://localhost:5000/profile/update",formData, {
+      await axios.put(`${import.meta.env.REACT_APP_BASE_URL}/profile/update`,formData, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
