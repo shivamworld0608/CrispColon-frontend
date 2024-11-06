@@ -52,7 +52,7 @@ const Login = () => {
             <div className="w-full flex-1 mt-8">
               <form onSubmit={handleLogin} className="mx-auto max-w-xs flex flex-col gap-4">
                 <input
-                  className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                  className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm text-gray-600 focus:outline-none focus:border-gray-400 focus:bg-white"
                   type="email"
                   placeholder="Enter your email"
                   value={email}
@@ -60,7 +60,7 @@ const Login = () => {
                   required
                 />
                 <input
-                  className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                  className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm text-gray-600 focus:outline-none focus:border-gray-400 focus:bg-white"
                   type="password"
                   placeholder="Enter your password"
                   value={password}
