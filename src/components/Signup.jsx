@@ -56,7 +56,7 @@ const Signup = () => {
     console.log("started debugging otp");
     try {
       console.log(userId);
-      const response = await fetch("http://localhost:5000/api/verify-otp", {
+      const response = await fetch(`${import.meta.env.REACT_APP_BASE_URL}/api/verify-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
