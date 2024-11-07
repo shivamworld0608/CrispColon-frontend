@@ -23,7 +23,7 @@ const Model = () => {
     setIsUploading(true); // Show loading indicator
 
     try {
-      const response = await fetch(`${import.meta.env.REACT_APP_BASE_URL}/upload`, {
+      const response = await fetch(`${import.meta.env.REACT_APP_BASE_URL}/api/upload`, {
         method: "POST",
         body: formData,
         credentials:"include",
