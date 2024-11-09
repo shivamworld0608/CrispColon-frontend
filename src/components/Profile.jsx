@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import axios from 'axios';
-import Cookies from 'js-cookie';
+
 
 function Profile() {
   const [user, setUser] = useState(null);
@@ -18,14 +18,7 @@ function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const token = Cookies.get('token');
-        if (!token) {
-          setError('Unauthorized: No token found');
-          return;
-        }
-
         const response = await axios.get(`${import.meta.env.REACT_APP_BASE_URL}/profile/get`, {
-          headers: { Authorization: `Bearer ${token}` },
           withCredentials: true,
 
         });
@@ -74,10 +67,8 @@ function Profile() {
     try {
       const form = new FormData();
       form.append('file', sendImage);
-      const token = Cookies.get('token');
 
      const response = await axios.put(`${import.meta.env.REACT_APP_BASE_URL}/profile/update-picture`, form, {
-        headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
   //I can use response.data.user.profilePic here but for quick working i am using this
@@ -93,9 +84,7 @@ function Profile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const token = Cookies.get('token');
       await axios.put(`${import.meta.env.REACT_APP_BASE_URL}/profile/update`,formData, {
-        headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
       setUser({ ...user, ...formData });
