@@ -15,7 +15,7 @@ const Login = () => {
       const response = await axios.post(`${import.meta.env.REACT_APP_BASE_URL}/api/login`, {
         email,
         password,
-      },{withcredentials:true});
+      },{withCredentials:true});
 
       // Assuming the server sends back a JWT token in the response
       if (response.data.success) {
